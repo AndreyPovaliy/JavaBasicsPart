@@ -1,5 +1,8 @@
 package Lesson4;
 
+import Lesson2.Car;
+import Lesson2.Color;
+
 import java.util.Arrays;
 
 public class Array {
@@ -30,8 +33,14 @@ public class Array {
         System.out.println(Arrays.toString(longs1));
 
         // передавать объекты
-//        Car[] cars = new Car[3];
-//        cars[0] = new Car();
+        Car[] cars = new Car[3];
+        cars[0] = new Car("Lada", "Largus", true, Color.WHITE);
+        cars[1] = new Car("BMW", "X5", true, Color.BLACK);
+        cars[2] = new Car("KIA", "Optima", true, Color.RED);
+
+        System.out.println(Arrays.toString(cars));
+
+        System.out.println(cars[0].getBrand());
 
 
         //цикл for
@@ -43,12 +52,12 @@ public class Array {
 
         //цикл foreach
 
-//        for(Car car: cars){
-//            if(car.getColor()==Color.BLACK){
-//                continue;
-//            }
-//            System.out.println(car);
-//        }
+        for (Car car : cars) {
+            if (car.getColor() == Color.BLACK) {
+                continue;
+            }
+            System.out.println(car);
+        }
 
         //do-while
 
@@ -73,8 +82,8 @@ public class Array {
             }
             System.out.println("end of cycle");
         }
-        varargMethod(123,"Hello");
-        varargMethod(123,"Hello","world","!!!");
+        varargMethod(123, "Hello");
+        varargMethod(123, "Hello", "world", "!!!");
 
 
         // сортировка
@@ -84,11 +93,14 @@ public class Array {
 
         System.out.println(Arrays.binarySearch(ints, 10));
         /*если нет числа в массиве, будет
-        отрицательное значение и число 7
+        отрицательное значение -8,
+        елси был бы то получил бы значение 7,
+        оно превращается в отрицательное и минус 1
          */
         System.out.println(Arrays.binarySearch(ints, 100));
 
-
+//        нотация О-большое
+//        сортировка:
 
     }
 
